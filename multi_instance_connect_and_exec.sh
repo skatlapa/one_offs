@@ -9,5 +9,5 @@ COMMAND=$2
 
 while IFS="\n" read -r SERVER_NAME; do
     [[ "$SERVER_NAME" =~ ^[[:space:]]*# ]] && continue
-    ssh $SERVER_NAME "$COMMAND" || snapaccess credentials refresh
+    ssh $SERVER_NAME "$COMMAND"
 done < $SERVER_NAMES_FILE
